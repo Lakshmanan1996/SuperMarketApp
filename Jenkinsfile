@@ -98,7 +98,7 @@ pipeline
         ===================================================== */
 
         stage('Docker Build') {
-            agent { label 'workernode3' }
+            
             steps {
                 unstash 'source-code'
                 
@@ -121,7 +121,7 @@ pipeline
         ===================================================== */
 
         stage('Push Image') {
-            agent { label 'workernode3' }
+            
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: 'dockerhub-creds',
